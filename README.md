@@ -1,1 +1,1 @@
-# C
+# Przykłady z C
