@@ -1,3 +1,13 @@
+/*PRZYKŁAD D
+Napisz  program wyświetlający rozmiaru pliku. Nazwa pliku przekazywana jest jako argument w linii poleceń przy uruchamianiu programu. Uwzględnij:
+
+obsługę błędnej ilości podanych argumentów programu
+
+kod błędu (-1) przy operacjach na plikach
+
+wykorzystaj funkcję exit przy zakończeniu programu
+*/
+
 #include <stdio.h>
 #include <fcntl.h>
 
