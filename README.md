@@ -3,6 +3,8 @@ vector http://cpp0x.pl/dokumentacja/standard-C++/vector/819
 
 rozwiązane zadania z kontenerów https://github.com/KarolinaSerpatowska/Programowanie-obiektowe/tree/master/26.04.2018
 
+Opis wskaźników na funkcje
+http://www.egrafik.pl/kurs-c-plus-plus/8.3.php
 
 
 # Przykłady z C
