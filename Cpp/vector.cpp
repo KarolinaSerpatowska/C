@@ -18,7 +18,7 @@ int main()
 
 	cout << "Liczba elemntow vectora " << w.size() << endl;
 
-	w.erase (myvector.begin()+3);
+	w.erase (w.begin()+3);
 	
 	/*inne metody vectora
 	begin() iterator na pierwszy element
