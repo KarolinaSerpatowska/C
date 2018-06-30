@@ -8,6 +8,8 @@ http://www.egrafik.pl/kurs-c-plus-plus/8.3.php
 
 Rozwiązane zadania z operatorów https://github.com/KarolinaSerpatowska/Programowanie-obiektowe/tree/master/10.05.2018
 
+Lista jednokierunkowa https://www.p-programowanie.pl/cpp/lista-jednokierunkowa-c/
+
 
 # Przykłady z C
 http://www.arturpyszczuk.pl/commands-chmod.html
