@@ -44,7 +44,7 @@ public:
 			o1.ilosc *= (-1);
 		o1.zap = sqrt(o1.zap + b);
 	}
-	Piechota operator *(float x)
+	float operator *(float x)
 	{
 		x = 2.5;
 		float n_zap;
