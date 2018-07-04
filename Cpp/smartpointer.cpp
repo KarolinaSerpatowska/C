@@ -24,7 +24,7 @@ public:
 
 int main()
 {
-	unique_ptr<Triangle> ptr1(new Triangle(1, 2, 3));
+	unique_ptr<Triangle> ptr1(new Triangle(1, 2, 3)); //to samo co Triangle *ptr1
 	unique_ptr<Triangle> ptr2(new Triangle(5, 6, 7));
 	ptr1->obwod(ptr2);
 
