@@ -24,6 +24,11 @@ int main()
 	{
 		cout << "Wyjatek: " << w << endl;
 	}
+	catch(...)
+	{
+		cout << "Pozostale wyjatki " << endl;
+	}
+
 
 	system("PAUSE");
 	return 0;
