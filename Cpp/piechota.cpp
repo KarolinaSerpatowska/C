@@ -1,78 +1,79 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 
 using namespace std;
 
-class Piechota {
-private:
+class Piechota
+{
 	int ilosc;
-	float zap;
-public:
-	Piechota(int il = 100, float zapo = 5.0)
-	{
-		ilosc = il;
-		zap = zapo;
-	}
-	void operator +(Piechota o1)
-	{
-		Piechota o2;
-		o2.ilosc = o1.ilosc + ilosc;
-		o2.zap = (o1.zap + zap) / 2;
-	}
-	void operator +=(Piechota o1)
-	{
-		int a = 100;
-		float b = 5.0;
-		o1.ilosc += a;
-		o1.zap += b;
-		o1.zap = o1.zap / 2;
-	}
-	void operator -(Piechota o1)
-	{
-		Piechota o2;
-		o2.ilosc = o1.ilosc - ilosc;
-		if (o2.ilosc<0)
-			o2.ilosc = o2.ilosc*(-1);
-		o2.zap = sqrt(o1.zap + zap);
-	}
-	void operator -=(Piechota o1)
-	{
-		int a = 100;
-		float b = 5.0;
-		o1.ilosc -= a;
-		if (o1.ilosc<0)
-			o1.ilosc *= (-1);
-		o1.zap = sqrt(o1.zap + b);
-	}
-	float operator *(float x)
-	{
-		x = 2.5;
-		float n_zap;
-		n_zap = zap*x;
-		return n_zap;
-	}
-	Piechota operator /(float x)
-	{
-		x = 2.5;
-		float n_zap2;
-		n_zap2 = zap / x;
-		return n_zap2;
-	}
-	
-	friend ostream &operator<< (ostream &wyjscie, const Piechota &p);
+	float zapotrzebowanie;
 
+public:
+	Piechota(int ilosc, float zapotrzebowanie)
+	{
+		this->ilosc = ilosc;
+		this->zapotrzebowanie = zapotrzebowanie;
+	}
+	Piechota()
+	{
+		ilosc = 100;
+		zapotrzebowanie = 5;
+	}
+	Piechota operator+(const Piechota& p)
+	{
+		Piechota ps;
+		ps.ilosc = p.ilosc + ilosc;
+		ps.zapotrzebowanie = (p.zapotrzebowanie + zapotrzebowanie) / ilosc;	
+		return ps;
+	}
+	Piechota operator+=(Piechota& p)
+	{
+		p.ilosc +=ilosc;
+		p.zapotrzebowanie = (p.zapotrzebowanie + zapotrzebowanie) / ilosc;
+		return p;
+	}
+	Piechota operator-(const Piechota& p)
+	{
+		Piechota ps;
+		ps.ilosc = p.ilosc - ilosc;
+		ps.zapotrzebowanie = sqrt(zapotrzebowanie);
+		return ps;
+	}
+	Piechota operator-=(Piechota& p)
+	{
+		p.ilosc -= ilosc;
+		p.zapotrzebowanie = sqrt(zapotrzebowanie);
+		return p;
+	}
+	Piechota operator*(float x)
+	{
+		zapotrzebowanie = zapotrzebowanie*x;
+		return *this;
+	}
+	Piechota operator/(float x)
+	{
+		zapotrzebowanie = zapotrzebowanie / 5;
+		return *this;
+	}
+	friend ostream &operator<<(ostream &wyjscie, const Piechota&p);
 };
 
-ostream &operator<< (ostream &wyjscie, const Piechota &p)
+ostream &operator<<(ostream &wyjscie, const Piechota& p)
 {
-	return wyjscie << "ILOSC ZOLNIERZY: " << p.ilosc << ", ZAPOTRZEBOWANIE NA GORZALKE: " << p.zap << endl;
+	return wyjscie << "ILOSC ZOLNIERZY: " << p.ilosc << " ZAPOTRZEBOWANIE NA GORZALKE: " << p.zapotrzebowanie;
 }
+
 
 int main()
 {
-	Piechota o1 = Piechota(120, 15.5);
-	cout << o1;
-	
+	Piechota p;
+	Piechota p2;
+	cout << p + p2 << endl;
+	cout << p - p2 << endl;
+	cout << p2 << endl;
+	cout << p * 5 << endl;
+	cout << p << endl;
+
 	system("PAUSE");
 	return 0;
 }
